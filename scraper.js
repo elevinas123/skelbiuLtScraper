@@ -9,8 +9,8 @@ puppeteer.use(StealthPlugin());
 
     const results = [];
 
-    for (let id = 1; id <= 23; id++) {
-        const url = `https://m.skelbiu.lt/skelbimai/${id}?cities=&category_id=4&search=1&keywords=nesiojamas+kompiuteris&cost_min=150&cost_max=400&condition=0&user_type=0&type=0`;
+    for (let id = 1; id <= 8; id++) {
+        const url = `https://m.skelbiu.lt/skelbimai/${id}?cities=&category_id=4&search=1&keywords=nesiojamas+kompiuteris&cost_min=400&cost_max=600&condition=0&user_type=0&type=0`;
         console.log(`Opening main page for category ${url}...`);
 
         try {
@@ -76,7 +76,7 @@ puppeteer.use(StealthPlugin());
                     // Save results every 5 pages
                     if ((i + 1) % 5 === 0 || i + 1 === links.length) {
                         fs.writeFileSync(
-                            "listings.json",
+                            "listingsMoreExpensive.json",
                             JSON.stringify(results, null, 2),
                             "utf-8"
                         );
