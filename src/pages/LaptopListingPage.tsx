@@ -53,6 +53,8 @@ export default function LaptopListingPage() {
             ? fuse().search(search).map((res) => res.item)
             : items;
 
+      
+      
         // 2) Price filter
         const minP = minPrice ? parseFloat(minPrice) : undefined;
         const maxP = maxPrice ? parseFloat(maxPrice) : undefined;
