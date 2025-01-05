@@ -1,21 +1,21 @@
 "use client";
 
-import { useState, useMemo } from "react";
-import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
-import { StarIcon } from "lucide-react";
-import { items } from "../../listings"; // your data
+import { Input } from "@/components/ui/input";
 import {
-    Pagination,
-    PaginationContent,
-    PaginationEllipsis,
-    PaginationItem,
-    PaginationLink,
-    PaginationNext,
-    PaginationPrevious,
+  Pagination,
+  PaginationContent,
+  PaginationEllipsis,
+  PaginationItem,
+  PaginationLink,
+  PaginationNext,
+  PaginationPrevious,
 } from "@/components/ui/pagination";
 import Fuse from "fuse.js";
+import { StarIcon } from "lucide-react";
+import { useState } from "react";
+import { items } from "../../listings"; // your data
 
 // If you want the user to pick how many items per page, you could store this in state as well.
 const ITEMS_PER_PAGE = 20;
