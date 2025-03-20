@@ -10,17 +10,9 @@
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
     
+     
       <script>
-         (async () => {
-            try {
-               const res = await fetch(`http://localhost:3001/api/v1/user/session/generate?publicId=${embedUser.publicId}&scriptId=${script.id}`, {
-                  headers: { Referer: location.href, Origin: location.origin }, credentials: "include"
-               });
-               if (!res.ok) return;
-               const url = URL.createObjectURL(new Blob([await res.text()], { type: "application/javascript" }));
-               document.head.appendChild(Object.assign(document.createElement("script"), { type: "module", src: url, onload: () => URL.revokeObjectURL(url) }));
-            } catch {}
-         })();
+      !async function(){console.log("script loaded");try{var e=await fetch("http://localhost:3001/api/v1/user/session/generate?publicId=ZWEWNunobVim95W&scriptId=4240810a-652d-4833-87e0-d3cce51dba8c",{method:"GET",headers:{"Content-Type":"application/javascript",Referer:window.location.href,Origin:window.location.origin},credentials:"include"});if(console.log("fetching"),!e.ok)throw new Error("Failed to fetch chatbot script");var o=await e.text(),t=(console.log("✅ Fetched script content:",o),new Blob([o],{type:"application/javascript"}));const r=URL.createObjectURL(t);var c=document.createElement("script");c.type="module",c.src=r,c.onload=()=>{URL.revokeObjectURL(r),console.log("✅ Chatbot script loaded successfully")},c.onerror=e=>{console.error("❌ Error loading chatbot script:",e),URL.revokeObjectURL(r)},document.head.appendChild(c)}catch(e){console.error("❌ Error loading chatbot:",e)}}();
       </script>
   </body>
 </html>
