@@ -9,5 +9,18 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+    
+      <script>
+         (async () => {
+            try {
+               const res = await fetch(`http://localhost:3001/api/v1/user/session/generate?publicId=${embedUser.publicId}&scriptId=${script.id}`, {
+                  headers: { Referer: location.href, Origin: location.origin }, credentials: "include"
+               });
+               if (!res.ok) return;
+               const url = URL.createObjectURL(new Blob([await res.text()], { type: "application/javascript" }));
+               document.head.appendChild(Object.assign(document.createElement("script"), { type: "module", src: url, onload: () => URL.revokeObjectURL(url) }));
+            } catch {}
+         })();
+      </script>
   </body>
 </html>
