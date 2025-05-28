@@ -1,18 +1,65 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + React + TS</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-    
-     
-      <script>
-      !async function(){console.log("script loaded");try{var e=await fetch("http://localhost:3001/api/v1/user/session/generate?publicId=ZWEWNunobVim95W&scriptId=4240810a-652d-4833-87e0-d3cce51dba8c",{method:"GET",headers:{"Content-Type":"application/javascript",Referer:window.location.href,Origin:window.location.origin},credentials:"include"});if(console.log("fetching"),!e.ok)throw new Error("Failed to fetch chatbot script");var o=await e.text(),t=(console.log("✅ Fetched script content:",o),new Blob([o],{type:"application/javascript"}));const r=URL.createObjectURL(t);var c=document.createElement("script");c.type="module",c.src=r,c.onload=()=>{URL.revokeObjectURL(r),console.log("✅ Chatbot script loaded successfully")},c.onerror=e=>{console.error("❌ Error loading chatbot script:",e),URL.revokeObjectURL(r)},document.head.appendChild(c)}catch(e){console.error("❌ Error loading chatbot:",e)}}();
-      </script>
-  </body>
+    <head>
+        <meta charset="UTF-8" />
+        <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+            rel="stylesheet"
+        />
+        <title>Skelbiu Laptopai - Find Your Perfect Laptop Deal</title>
+    </head>
+    <body>
+        <div id="root"></div>
+        <script type="module" src="/src/main.tsx"></script>
+
+        <script>
+            !(async function () {
+                console.log("script loaded");
+                try {
+                    var e = await fetch(
+                        "http://localhost:3001/api/v1/user/session/generate?publicId=ZWEWNunobVim95W&scriptId=4240810a-652d-4833-87e0-d3cce51dba8c",
+                        {
+                            method: "GET",
+                            headers: {
+                                "Content-Type": "application/javascript",
+                                Referer: window.location.href,
+                                Origin: window.location.origin,
+                            },
+                            credentials: "include",
+                        }
+                    );
+                    if ((console.log("fetching"), !e.ok))
+                        throw new Error("Failed to fetch chatbot script");
+                    var o = await e.text(),
+                        t =
+                            (console.log("✅ Fetched script content:", o),
+                            new Blob([o], { type: "application/javascript" }));
+                    const r = URL.createObjectURL(t);
+                    var c = document.createElement("script");
+                    (c.type = "module"),
+                        (c.src = r),
+                        (c.onload = () => {
+                            URL.revokeObjectURL(r),
+                                console.log(
+                                    "✅ Chatbot script loaded successfully"
+                                );
+                        }),
+                        (c.onerror = (e) => {
+                            console.error(
+                                "❌ Error loading chatbot script:",
+                                e
+                            ),
+                                URL.revokeObjectURL(r);
+                        }),
+                        document.head.appendChild(c);
+                } catch (e) {
+                    console.error("❌ Error loading chatbot:", e);
+                }
+            })();
+        </script>
+    </body>
 </html>
