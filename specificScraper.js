@@ -1,6 +1,6 @@
-const puppeteer = require("puppeteer-extra");
-const fs = require("fs");
-const StealthPlugin = require("puppeteer-extra-plugin-stealth");
+import puppeteer from "puppeteer-extra";
+import fs from "fs";
+import StealthPlugin from "puppeteer-extra-plugin-stealth";
 
 // Use the stealth plugin
 puppeteer.use(StealthPlugin());
